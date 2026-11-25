@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f3ede2">
+  <title>测测你的七宗罪人格</title>
+  <meta name="description" content="四十问，照见你骨子里的那位古人。七宗罪 × 历史人物趣味人格测试。">
+  <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+  <div class="paper"></div>
+
+  <main class="app">
+
+    <!-- 首页 -->
+    <section class="screen active" id="home">
+      <div class="home-inner">
+        <p class="eyebrow">古 人 人 格 图 鉴</p>
+        <h1 class="title">
+          <span class="title-small">测测你的</span>
+          <span class="title-big">七宗罪人格</span>
+        </h1>
+        <p class="subtitle">四十问，照见你骨子里的那位古人</p>
+        <img class="divider" src="assets/deco_divider.png" alt="" aria-hidden="true">
+
+        <div class="seal-row" id="sealRow"></div>
+
+        <div class="home-actions">
+          <button class="btn primary" id="startBtn">开 始 测 试</button>
+          <button class="btn ghost hidden" id="resumeBtn">继续上次的答题</button>
+        </div>
+        <p class="meta">40 题 · 约 5 分钟 · 凭第一感觉作答</p>
+      </div>
+
+      <img class="hero-img" src="assets/hero_mountains.jpg" alt="" aria-hidden="true">
+    </section>
+
+    <!-- 答题 -->
+    <section class="screen" id="quiz">
+      <header class="quiz-head">
+        <button class="icon-btn" id="backBtn" aria-label="上一题">‹ 上一题</button>
+        <span class="counter"><b id="qIndex">1</b> / <span id="qTotal">40</span></span>
+      </header>
+      <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="40" aria-valuenow="0">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+
+      <div class="q-card" id="qCard">
+        <p class="q-cat" id="qCat">日常习惯</p>
+        <h2 class="q-text" id="qText"></h2>
+        <img class="divider" src="assets/deco_divider.png" alt="" aria-hidden="true">
+        <ol class="options" id="options"></ol>
+      </div>
+      <p class="quiz-tip">可用键盘 1-4 作答</p>
+    </section>
+
+    <!-- 推演中 -->
+    <section class="screen" id="loading">
+      <div class="loading-inner">
+        <div class="ink-ring"><span id="loadingSeal">命</span></div>
+        <p class="loading-text">正在翻阅史册，推演你的命格……</p>
+      </div>
+    </section>
+
+    <!-- 结果 -->
+    <section class="screen" id="result">
+      <div class="result-wrap">
+
+        <!-- 分享卡：截这一屏发小红书 / 朋友圈 -->
+        <article class="share-card" id="shareCard">
+          <div class="corner tl"></div><div class="corner tr"></div>
+          <div class="corner bl"></div><div class="corner br"></div>
+
+          <p class="card-eyebrow">我 的 七 宗 罪 人 格</p>
+          <div class="card-main">
+            <div class="portrait">
+              <img id="rPortrait" alt="">
+              <div class="big-seal" id="rSeal">傲</div>
+            </div>
+            <div class="card-id">
+              <p class="r-sin"><span id="rSin">傲慢</span><small id="rSinEn">PRIDE</small></p>
+              <p class="r-combo" id="rCombo">多谋的帝王</p>
+              <p class="r-figure">古人原型 · <b id="rFigure">秦始皇</b></p>
+              <p class="r-figure-sub" id="rFigureSub">嬴政 · 秦</p>
+            </div>
+          </div>
+          <blockquote class="slogan" id="rSlogan"></blockquote>
+          <div class="tags" id="rTags"></div>
+
+          <div class="bars" id="rBars"></div>
+
+          <footer class="card-foot">
+            <span>测测你的七宗罪人格</span>
+            <span class="dot">·</span>
+            <span>截图晒出你的古人</span>
+          </footer>
+        </article>
+
+        <div class="detail">
+          <section class="block box">
+            <h3><i>壹</i>性格特点</h3>
+            <p id="rTrait"></p>
+          </section>
+          <section class="block box">
+            <h3><i>贰</i>匹配理由</h3>
+            <p id="rReason"></p>
+            <ul class="quotes" id="rQuotes"></ul>
+          </section>
+          <section class="block box">
+            <h3><i>叁</i>隐藏优势</h3>
+            <p id="rStrength"></p>
+          </section>
+          <section class="block box egg">
+            <h3><i>肆</i>趣味彩蛋</h3>
+            <p id="rEgg"></p>
+          </section>
+          <section class="block box">
+            <h3><i>伍</i>人格关系</h3>
+            <div class="relations" id="rRelations"></div>
+          </section>
+
+          <div class="result-actions">
+            <button class="btn primary" id="copyBtn">复制分享文案</button>
+            <button class="btn ghost" id="restartBtn">重新测试</button>
+          </div>
+          <p class="disclaimer">本测试为趣味娱乐内容，不构成任何心理学诊断或评价。<br>人物彩蛋均出自史籍记载，“七宗罪”仅为趣味人格标签。</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="data.js?v=3"></script>
+  <script src="app.js?v=3"></script>
+</body>
+</html>
